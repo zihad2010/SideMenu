@@ -14,7 +14,7 @@ class ContainerController: UIViewController {
     var isExpand: Bool = false
     let storyboardName: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     var menuController = MenuController()
-     var homeController = HomeController()
+    var homeController = HomeController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,7 @@ class ContainerController: UIViewController {
         homeController.delegate = self
         self.view.addSubview(homeController.self.view)
         self.addChild(homeController)
+        homeController.didMove(toParent: self)
     }
     
     func configarationMenu() {
@@ -37,6 +38,9 @@ class ContainerController: UIViewController {
         self.menuController  = storyboardName.instantiateViewController(withIdentifier: "MenuController") as! MenuController
         self.menuController.delegate = self
         self.menuController.view.frame = CGRect(x: -UIScreen.main.bounds.width, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        self.view.addSubview(menuController.self.view)
+        self.addChild(menuController)
+        menuController.didMove(toParent: self)
         self.menuController.view.backgroundColor = .clear
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.gestureToRespond))
@@ -78,7 +82,9 @@ extension ContainerController:MenuDelegate {
     func didSelectMenuOption(menuOption: MenuOption) {
         switch menuOption {
         case .profile:
-          
+            var profileController = ProfileController()
+            profileController  = storyboardName.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+            self.navigationController?.pushViewController(profileController, animated: true)
             print("Show Profile")
         case .Inbox:
             print("Show Inbox")
@@ -90,7 +96,7 @@ extension ContainerController:MenuDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-         isExpand = !isExpand
+        isExpand = !isExpand
         showOrCloseMenu(isExpand:isExpand, menuOption: nil)
     }
     

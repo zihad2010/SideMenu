@@ -10,11 +10,21 @@
         <!--Profile Controller-->
         <scene sceneID="pDk-Tb-BwZ">
             <objects>
-                <viewController id="nCi-tZ-okc" customClass="ProfileController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileController" id="nCi-tZ-okc" customClass="ProfileController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sbY-Of-3U0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QV-8p-RkI">
+                                <rect key="frame" x="200" y="230" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="08t-cG-4e5" kind="show" id="PFY-gQ-css"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Mvx-zW-eFS"/>
                     </view>
                     <navigationItem key="navigationItem" id="mrj-46-sKf"/>
@@ -22,6 +32,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecV-jX-OQs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="288" y="-548"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wf9-Rc-qYD">
+            <objects>
+                <viewController id="08t-cG-4e5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IEg-d3-2nj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="r5M-j0-DNp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bq0-Fp-sgO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qws-wh-WEB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="-1065"/>
         </scene>
         <!--Home Controller-->
         <scene sceneID="4HV-HI-QQD">
